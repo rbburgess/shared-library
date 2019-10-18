@@ -1,3 +1,3 @@
 def call() {
-    sh "echo git status"
+    sh "git status"
 }
