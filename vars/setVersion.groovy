@@ -11,6 +11,6 @@ def call(String newVersion) {
             }
         }
 
-        writeFile file: "conanfile.py", text: file.replaceAll(versionLine.trim(), "version = '${version}'")
+        writeFile file: "conanfile.py", text: file.replaceAll(versionLine.trim(), "version = '${newVersion}'")
     }
 }
