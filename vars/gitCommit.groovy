@@ -3,5 +3,5 @@ def call(String commitMessage) {
     sh 'git config user.name "Robert"'
     sh 'git add --all'
     sh "git commit -m \"${commitMessage}\""
-    sh 'git push' 
+    sh 'git push origin HEAD:shared-library' 
 }
