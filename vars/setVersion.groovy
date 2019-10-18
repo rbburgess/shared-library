@@ -1,4 +1,4 @@
-def call() {
+def call(String newVersion) {
     def conanFileExists = fileExists "conanfile.py"
 
     if(conanFileExists) {
@@ -11,9 +11,6 @@ def call() {
             }
         }
 
-        String version = versionLine.split("=")[1].trim()
-        version = version.substring(1, version.length() - 1)
-
-        sh "echo Version: ${version}"
+        writeFile file: "conanfile.py", text: file.replaceAll(versionLine.trim(), "version = '${version}'")
     }
 }
