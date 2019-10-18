@@ -6,7 +6,7 @@ def call() {
         def lines = file.split("\n")
         String versionLine
         for (int i = 0; i< lines.size();i++){
-            if(lines[i] =~ /(   version) ?= ?['"].+['"]/){
+            if(lines[i] =~ /(version) ?= ?['"].+['"]/){
                 versionLine = lines[i]
             }
         }
